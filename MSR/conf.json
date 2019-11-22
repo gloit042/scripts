@@ -1,0 +1,16 @@
+{
+  "disk": {
+    "devs": ["md126"],
+    "log": "disk.log"
+  },
+  "_network": {
+    "dsts": ["10.0.0.58"],
+    "log-prefix": "network.log"
+  },
+  "cpu": {
+    "log": "cpu.log"
+  },
+  "mem": {
+    "log": "mem.log"
+  }
+}
