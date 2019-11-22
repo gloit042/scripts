@@ -1,3 +1,3 @@
 # Utility scripts
 
-1. [machine state recorder](./MSR)
+1. [machine activity recorder](./MSR)
