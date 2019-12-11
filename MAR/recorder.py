@@ -60,7 +60,7 @@ def record(conf, arg):
             mode = os.fstat(of.fileno()).st_mode
             mode = mode | MODE
             os.fchmod(of.fileno(), mode)
-            command = ['tcpdump -i ib0 -l -e -n dst %s | ./tools/netbps.pl -t %d' % (dst, interval)]
+            command = ['tcpdump -i %s -l -e -n dst %s | ./tools/netbps.pl -t %d' % (net_conf['dev'], dst, interval)]
             p = subprocess.Popen(command, shell=True, stdout=of, preexec_fn=os.setsid)
             group_pairs.append((p,of))
 
@@ -75,7 +75,7 @@ def record(conf, arg):
         mode = os.fstat(of.fileno()).st_mode
         mode = mode | MODE
         os.fchmod(of.fileno(), mode)
-        command = ['tools/record.sh', 'mem', str(interval)]
+        command = ['tools/record.sh', 'mem', str(interval), mem_conf['program']]
         p = subprocess.Popen(command, stdout=of)
         pairs.append((p,of))
 

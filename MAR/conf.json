@@ -3,14 +3,16 @@
     "devs": ["md126"],
     "log": "disk.log"
   },
-  "_network": {
-    "dsts": ["10.0.0.58"],
+  "network": {
+    "dev": "ens14f1",
+    "dsts": ["192.168.2.56"],
     "log-prefix": "network.log"
   },
   "cpu": {
     "log": "cpu.log"
   },
   "mem": {
+    "program": "",
     "log": "mem.log"
   }
 }

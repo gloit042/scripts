@@ -16,7 +16,7 @@ if [ $# -eq 0 ]; then
 else
   case $1 in
     "mem")
-      CMD="free | head -n 2 | tail -n 1 | awk -v date=\"\$(date -Iseconds)\" -F \" \" '{print date,\$2,\$3,\$4,\$5,\$6,\$7}'"
+      CMD="ps -C $3 -o pmem | tail -n +2 | awk -v date=\"\$(date -Iseconds)\" '{s+=\$1} END {printf \"%s %.1f\n\", date,s}'"
       loop_execute "$CMD" $2
       ;;
     "cpu")
